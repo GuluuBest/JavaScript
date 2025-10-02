@@ -4,8 +4,8 @@ let ipa = 78;
 
 let nilairatarata = (matematika + english + ipa) / 3;
 
-console.log(`Nilai rata-rata siswa adalah: ${nilairatarata}`);
-console.log(`Tipe data dari Nilai rata rata adalah: ${typeof nilairatarata}`);
+console.log(`Nilai rata rata siswa: ${nilairatarata}`);
+console.log(`Tipe data dari Nilai rata rata: ${typeof nilairatarata}`);
 
 let statuskelulusan;
 if (nilairatarata >= 80) {
