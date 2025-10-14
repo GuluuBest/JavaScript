@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tabel Nilai Siswa</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: 20px auto;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      caption {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+      footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        TABEL NILAI SISWA
+      </caption>
+      <thead>
+        <tr>
+          <th>NO</th>
+          <th>NAMA SISWA</th>
+          <th>TUGAS</th>
+          <th>UTS</th>
+          <th>UAS</th>
+          <th>NA</th>
+        </tr>
+      </thead>
+      <tbody id="data-tabel"></tbody>
+    </table>
+
+    <footer>M RIDHOLLAH RAMADHAN</footer>
+
+    <script>
+      const siswa = [
+        { nama: "Asep", tugas: 80, uts: 95, uas: 85 },
+        { nama: "Iwan", tugas: 75, uts: 75, uas: 90 },
+        { nama: "Cepi", tugas: 70, uts: 80, uas: 90 },
+        { nama: "Agus", tugas: 65, uts: 40, uas: 55 },
+        { nama: "Dadang", tugas: 60, uts: 70, uas: 60 },
+      ];
+      function hitungNA(tugas, uts, uas) {
+        return (0.4 * tugas + 0.3 * uts + 0.3 * uas).toFixed(1);
+      }
+
+      const tabel = document.getElementById("data-tabel");
+
+      siswa.forEach((s, i) => {
+        const na = hitungNA(s.tugas, s.uts, s.uas);
+        const row = `
+        <tr>
+          <td>${i + 1}</td>
+          <td>${s.nama}</td>
+          <td>${s.tugas}</td>
+          <td>${s.uts}</td>
+          <td>${s.uas}</td>
+          <td>${na}</td>
+        </tr>
+      `;
+        tabel.innerHTML += row;
+      });
+    </script>
+  </body>
+</html>
