@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ridho Ramadhan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="pesanan.html" class="btn-nav">Pesanan</a>
+      <h1>Katalog Buku by Ridho</h1>
+      <div class="card">
+        <h2>Tambah Buku</h2>
+        <input id="judul" type="text" placeholder="Judul Buku" />
+        <input id="stok" type="number" placeholder="Stok" />
+        <button onclick="tambahBuku()">Tambah Buku</button>
+      </div>
+
+      <div class="card">
+        <h2>Cari Buku</h2>
+        <input id="cari" type="text" placeholder="Cari judul..." />
+        <button id="btnSearch" type="button">Search</button>
+      </div>
+
+      <div class="card">
+        <h2>Daftar Buku</h2>
+        <div id="listBuku">Loading...</div>
+      </div>
+    </div>
+
+    <div id="toast"></div>
+  </body>
+  <script src="script.js"></script>
+</html>

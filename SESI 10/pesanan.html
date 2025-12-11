@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pesanan Buku</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .pesanan-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .pesanan {
+        background: #2b2b2b;
+        padding: 18px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        line-height: 1.5;
+      }
+
+      .pesanan button {
+        margin-top: 10px;
+        background: seagreen;
+      }
+
+      .pesanan button:hover {
+        background: #1e8e4a;
+      }
+
+      .pending {
+        color: orange;
+        font-weight: bold;
+      }
+
+      .confirmed {
+        color: lightgreen;
+        font-weight: bold;
+      }
+
+      h2 {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <a href="index.html" class="btn-nav">Admin / Katalog Buku</a>
+
+      <h2>Buat Pesanan</h2>
+
+      <div class="card">
+        <label>ID Buku:</label>
+        <input type="number" id="buku_id" placeholder="Masukkan ID buku" />
+
+        <label>Jumlah Tiket:</label>
+        <input type="number" id="jumlah" placeholder="Masukkan jumlah" />
+
+        <button onclick="buatPesanan()">Buat Pesanan</button>
+      </div>
+
+      <h2>Daftar Pesanan</h2>
+      <div id="listPesanan" class="pesanan-container"></div>
+
+      <div id="toast"></div>
+    </div>
+
+    <script src="pesanan.js"></script>
+  </body>
+</html>
